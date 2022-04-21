@@ -196,7 +196,7 @@ class _Flutter3DModelViewerState extends State<Flutter3DModelViewer> {
         case '/':
         case '/index.html':
           final htmlTemplate =
-              await rootBundle.loadString('packages/model_viewer/etc/assets/template.html');
+              await rootBundle.loadString('packages/flutter_3d_model_viewer/etc/assets/template.html');
           final html = utf8.encode(_buildHTML(htmlTemplate));
           response
             ..statusCode = HttpStatus.ok
@@ -207,7 +207,7 @@ class _Flutter3DModelViewerState extends State<Flutter3DModelViewer> {
           break;
 
         case '/model-viewer.js':
-          final code = await _readAsset('packages/model_viewer/etc/assets/model-viewer.js');
+          final code = await _readAsset('packages/flutter_3d_model_viewer/etc/assets/model-viewer.js');
           response
             ..statusCode = HttpStatus.ok
             ..headers.add("Content-Type", "application/javascript;charset=UTF-8")
