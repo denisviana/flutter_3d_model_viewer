@@ -13,8 +13,8 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'html_builder.dart';
 
 /// Flutter widget for rendering interactive 3D models.
-class ModelViewer extends StatefulWidget {
-  const ModelViewer({
+class Flutter3DModelViewer extends StatefulWidget {
+  const Flutter3DModelViewer({
     this.backgroundColor = Colors.white,
     required this.src,
     this.alt,
@@ -84,10 +84,10 @@ class ModelViewer extends StatefulWidget {
   final String? iosSrc;
 
   @override
-  State<ModelViewer> createState() => _ModelViewerState();
+  State<Flutter3DModelViewer> createState() => _Flutter3DModelViewerState();
 }
 
-class _ModelViewerState extends State<ModelViewer> {
+class _Flutter3DModelViewerState extends State<Flutter3DModelViewer> {
   final Completer<WebViewController> _controller = Completer<WebViewController>();
 
   HttpServer? _proxy;
@@ -108,7 +108,7 @@ class _ModelViewerState extends State<ModelViewer> {
   }
 
   @override
-  void didUpdateWidget(final ModelViewer oldWidget) {
+  void didUpdateWidget(final Flutter3DModelViewer oldWidget) {
     super.didUpdateWidget(oldWidget);
     // TODO
   }
