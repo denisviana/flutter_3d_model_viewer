@@ -23,6 +23,7 @@ abstract class HTMLBuilder {
     final html = StringBuffer(htmlTemplate);
     html.write('<model-viewer');
     html.write(' src="${htmlEscape.convert(src)}"');
+    html.write('shadow-intensity="1"');
     html.write(
         ' style="background-color: rgb(${backgroundColor.red}, ${backgroundColor.green}, ${backgroundColor.blue});"');
     if (alt != null) {
@@ -30,7 +31,7 @@ abstract class HTMLBuilder {
     }
     // TODO: animation-name
     // TODO: animation-crossfade-duration
-    if (ar ?? false) {
+    if (ar == true) {
       html.write(' ar');
     }
     if (arModes != null) {
@@ -39,13 +40,13 @@ abstract class HTMLBuilder {
     if (arScale != null) {
       html.write(' ar-scale="${htmlEscape.convert(arScale)}"');
     }
-    if (autoRotate ?? false) {
+    if (autoRotate == true) {
       html.write(' auto-rotate');
     }
     if (autoRotateDelay != null) {
       html.write(' auto-rotate-delay="$autoRotateDelay"');
     }
-    if (autoPlay ?? false) {
+    if (autoPlay == true) {
       html.write(' autoplay');
     }
     // TODO: skybox-image

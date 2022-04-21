@@ -21,9 +21,9 @@ class Flutter3DModelViewer extends StatefulWidget {
     this.ar,
     this.arModes,
     this.arScale,
-    this.autoRotate,
+    this.autoRotate = true,
     this.autoRotateDelay,
-    this.autoPlay,
+    this.autoPlay = true,
     this.cameraControls,
     this.iosSrc,
     Key? key,
@@ -65,7 +65,7 @@ class Flutter3DModelViewer extends StatefulWidget {
   final String? arScale;
 
   /// Enables the auto-rotation of the model.
-  final bool? autoRotate;
+  final bool autoRotate;
 
   /// Sets the delay before auto-rotation begins. The format of the value is a
   /// number in milliseconds. The default is 3000.
@@ -74,7 +74,7 @@ class Flutter3DModelViewer extends StatefulWidget {
   /// If this is true and a model has animations, an animation will
   /// automatically begin to play when this attribute is set (or when the
   /// property is set to true). The default is false.
-  final bool? autoPlay;
+  final bool autoPlay;
 
   /// Enables controls via mouse/touch when in flat view.
   final bool? cameraControls;
